@@ -63,7 +63,7 @@ const seedDatabase = async () => {
         // Organization A pricing
         { org_id: 1, item_id: 1, zone: "central", base_distance_in_km: 5, km_price: { "perishable" : 150 , "non-perishable" : 100}, fix_price: 1000 },
         // Organizatn B pricing
-        { org_id: 2, item_id: 1+, zone: "central", base_distance_in_km: 5, km_price:{ "perishable" : 200 , "non-perishable" : 100} , fix_price: 1200 },
+        { org_id: 2, item_id: 1, zone: "central", base_distance_in_km: 5, km_price:{ "perishable" : 200 , "non-perishable" : 100} , fix_price: 1200 },
         // Orn C pricing
         { org_id: 3, item_id: 1, zone: "central", base_distance_in_km: 5, km_price:{ "perishable" : 180 , "non-perishable" : 130} , fix_price: 1100 },
         // Orn D pricing
@@ -176,4 +176,4 @@ const seedDatabase = async () => {
 };
 
 
-seedDatabase();
+module.exports = seedDatabase ;

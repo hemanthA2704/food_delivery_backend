@@ -10,6 +10,10 @@ const Org = require("./models/orgModel");
 const Pricing = require("./models/pricingModel");
 const Item = require("./models/itemModel");
 
+const seedDatabase = require("./controllers/dataEntry") ;
+
+seedDatabase() ;    
+
 // console.log(process.env.PASSWORD)
 
 app.get("/price" , async function(req,res) {
