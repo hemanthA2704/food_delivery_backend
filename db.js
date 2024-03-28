@@ -5,16 +5,23 @@ const Sequelize = require('sequelize');
 // Initialize Sequelize
 
 
-const database = process.env.DB ;
-const user = process.env.USERNAME ;
-const password = process.env.PASSWORD ;
+const URL = process.env.URL ;
 
-
-const sequelize = new Sequelize("postgres" , "postgres" , password, {
-  host: process.env.HOSTNAME,
-  dialect: 'postgres', // specify the dialect
-  port: 5432, // default PostgreSQL port
+const sequelize = new Sequelize(URL, {
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false // Add this line if SSL is enabled
+    }
+  }
 });
+
+// const sequelize = new Sequelize("postgres" , "postgres" , password, {
+//   host: process.env.HOSTNAME,
+//   dialect: 'postgres', // specify the dialect
+//   port: 5432, // default PostgreSQL port
+// });
 
 // Test the connection
 sequelize
