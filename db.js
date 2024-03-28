@@ -11,7 +11,7 @@ const password = process.env.PASSWORD ;
 
 
 const sequelize = new Sequelize("postgres" , "postgres" , password, {
-  host: 'localhost',
+  host: process.env.HOSTNAME,
   dialect: 'postgres', // specify the dialect
   port: 5432, // default PostgreSQL port
 });
