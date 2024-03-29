@@ -25,11 +25,12 @@ const options = {
         } ,
         servers : [
             {
-                url : "https://food-delivery-backend-n8b2.onrender.com" ,
+                url : "https://food-delivery-backend-n8b2.onrender.com",
+                // url : "http://localhost:3000" // This url should be changed to http://localhost:3000 when app is running locally.
             } 
         ] 
     },
-    apis :["index.js"]
+    apis :["src/index.js"]
 }
 
 const specs = swaggerJsDoc(options)
