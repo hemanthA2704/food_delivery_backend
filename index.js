@@ -25,7 +25,7 @@ const options = {
         } ,
         servers : [
             {
-                url : "http://localhost:3000" ,
+                url : "https://food-delivery-backend-n8b2.onrender.com" ,
             } 
         ] 
     },
@@ -193,13 +193,6 @@ app.post("/price" , async function(req, res) {
 })
    
 app.use("/",swaggerUI.serve , swaggerUI.setup(specs)) ;
-
-
-app.get("*" , function(req,res){
-    res.status(400).send("This is a invalid request");
-})
-
-
 
 
 app.listen(3000 , function(err){

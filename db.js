@@ -7,6 +7,8 @@ const Sequelize = require('sequelize');
 
 const URL = process.env.URL ;
 
+// connecting to the database hosted on render.com using its external link.
+
 const sequelize = new Sequelize(URL, {
   dialect: 'postgres',
   dialectOptions: {
@@ -17,11 +19,19 @@ const sequelize = new Sequelize(URL, {
   }
 });
 
-// const sequelize = new Sequelize("postgres" , "postgres" , password, {
+
+
+// This below code can be used to connect the app with local database 
+
+// const db = process.env.db
+// const username = process.env.username
+
+// const sequelize = new Sequelize(db ,username, password, {
 //   host: process.env.HOSTNAME,
 //   dialect: 'postgres', // specify the dialect
 //   port: 5432, // default PostgreSQL port
 // });
+
 
 // Test the connection
 sequelize
